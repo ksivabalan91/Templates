@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ReadWriteFile {
 
-    public static List<String> readFile(File readFile) throws IOException{
+    public static List<String> readFile(String readFile) throws IOException{
         List<String> tempList = new LinkedList<String>();
 
         FileReader fr = new FileReader(readFile);
@@ -26,8 +26,12 @@ public class ReadWriteFile {
         return tempList;        
     }
 
-    public static void writeFile(File writeFile, List<String> writeList) throws IOException{
-        FileWriter fw = new FileWriter(writeFile,true);
+    public static void writeFile(String folder,String writeFile, List<String> writeList) throws IOException{
+        folder = folder+"\\";
+        File folderpath = new File(folder);
+        if(!folderpath.exists()){folderpath.mkdir();}
+
+        FileWriter fw = new FileWriter(folder+writeFile,true);
         BufferedWriter bw = new BufferedWriter(fw);
         
         for (String item:writeList){
