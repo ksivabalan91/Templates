@@ -28,7 +28,7 @@ public class Client {
 
         try (Socket s = new Socket(host, port)) {
             // connect to server with host and port number
-            System.out.println("\nConnected to shopping cart server at " + host + " on port " + port + "\n");
+            System.out.println("\nConnected to server at " + host + " on port " + port + "\n");
 
             // initiallize input and output streams
             OutputStream os = s.getOutputStream();

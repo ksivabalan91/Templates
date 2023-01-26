@@ -13,6 +13,8 @@ public class ReadWriteFile {
         String line = "";
 
         while((line=br.readLine())!=null){
+            line = line.replace("\uFEFF", "");
+            line = line.replace("\\n", "\n");
             tempList.add(line);
         }
 
